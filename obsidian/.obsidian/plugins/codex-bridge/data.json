@@ -1,0 +1,14 @@
+{
+  "language": "zh",
+  "bridgeFolder": "_codex_bridge",
+  "includeFrontmatter": true,
+  "includeBacklinks": true,
+  "appendHeading": "Codex Response",
+  "openaiApiKey": "",
+  "openaiModel": "gpt-4o-mini",
+  "openaiBaseUrl": "https://api.openai.com/v1",
+  "openaiApiMode": "chat_completions",
+  "localMcpEnabled": true,
+  "localMcpPort": 8765,
+  "localMcpToken": "09e47bfe3bea3978056abb6194a8f1428fb3d41e10cb860b"
+}

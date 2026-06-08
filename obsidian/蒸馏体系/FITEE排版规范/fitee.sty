@@ -1,0 +1,668 @@
+%
+% Provided courtesy of Dr. Xianliang Hu with Department of Mathematics, Zhejiang University
+%
+% First release on 2010/06/21
+% Modified on June 30, 2017 (ZH)
+% Modified on Dec 12, 2017 (XSK)
+% Modified on Dec., 2025 (MYZ)
+
+\ProvidesPackage{fitee}
+
+\usepackage[tbtags]{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{latexsym,bm}
+\usepackage[english]{babel}
+\usepackage{fancyhdr}
+\usepackage{multirow}
+\usepackage{indentfirst}
+\usepackage{graphicx}
+\usepackage{color}
+\definecolor{headerblue}{rgb}{0, 0.247, 0.533}
+\usepackage{balance}
+\usepackage{authblk}
+\usepackage{titlesec}
+\usepackage{booktabs}
+%\usepackage[hang]{caption2}
+\usepackage{caption2}
+\usepackage[T1]{fontenc}
+\usepackage[round]{natbib}
+\usepackage{helvet}
+\renewcommand{\sfdefault}{phv}
+\usepackage{array}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{marvosym}
+\providecommand\algocomment[1]{ {\footnotesize // #1 } }
+%\usepackage[hang]{footmisc}
+\usepackage{stfloats}
+\usepackage{upgreek}
+%\usepackage{setspace}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%page setup
+\paperwidth 210mm
+\paperheight 297 mm
+\textwidth  18.0 true cm
+\textheight 24.7 true cm
+\oddsidemargin  0mm
+\evensidemargin 0mm
+\hoffset -1.04cm
+\voffset -1.54cm
+
+
+\topmargin    2.5pt
+\headheight   19.5pt
+\headsep      0.3in
+\addtolength{\headwidth}{2pt}
+\leftmargin   -0.5 true cm
+\columnsep 12pt
+\parindent  2em
+\xspaceskip 0pt    % set the size of a blank that follows a period
+\setlength{\arrayrulewidth}{0.2pt}
+%\setlength{\footnotemargin}{5em}
+
+\setlength{\spaceskip}{0.3em plus 0.2em minus 0.1em}
+% set the vertical space between floating environments
+\setlength{\floatsep} {2pt plus 3pt minus 2pt}
+% set the vertical space between floating environments and the text that follows -- can be a negative value
+\setlength{\textfloatsep} {8pt plus 3pt minus 2pt}
+% set the vertical space between an equation and text, and two equations
+\setlength{\abovedisplayskip}{-\baselineskip} % before the first equation
+\setlength{\belowdisplayskip}{5pt} % after the first equation
+\setlength{\abovedisplayshortskip}{0pt} % between equations
+\setlength{\belowdisplayshortskip}{5pt} % after the last equation
+
+
+% set the space between the title/caption and the body of the table/figure -- can be a negative value
+\abovecaptionskip 5pt
+\belowcaptionskip 2pt
+
+
+% Line spacing: 1.1 lines
+\renewcommand{\baselinestretch}{1.1}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%table/figure caption -- boldface
+\renewcommand{\figurename}{Fig.}
+\renewcommand{\tablename}{Table}
+\renewcommand{\captionfont}{\renewcommand{\baselinestretch}{1.1} \small \bf}
+\renewcommand{\captionlabelfont}{\small \bf}
+\renewcommand{\captionlabeldelim}{\ }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% theorem, definition, example, etc.
+\newtheoremstyle{mythm}% name of the style to be used
+  {0pt}% measure of space to leave above the theorem. E.g.: 3pt
+  {0pt}% measure of space to leave below the theorem. E.g.: 3pt
+  {}% name of font to use in the body of the theorem
+  {}% measure of space to indent
+  {\bf}% name of head font
+  {}% punctuation between head and body
+  {1em}% space after theorem head; " " = normal interword space
+  {}% Manually specify head
+\theoremstyle{mythm}
+\newtheorem{lemma}{Lemma}
+\newtheorem{definition}{Definition}
+\newtheorem{example}{Example}
+\newtheorem{experiment}{Experiment}
+\newtheorem{theorem}{Theorem}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% section spacing
+\titleformat{\section}[block]{\fontsize{12pt}{12pt}\selectfont \sf \bf }{\thesection}{0.5em}{} %\bf
+\titlespacing*{\section}{0pt}{4ex}{2ex}
+
+% subsection spacing
+\titleformat{\subsection}[block]{\sf \bf}{\thesubsection}{0.5em}{}
+\titlespacing*{\subsection}{0pt}{2ex}{2ex}
+
+% subsubsection spacing
+\titleformat{\subsubsection}[block]{}{\thesubsubsection}{0.5em}{}
+\titlespacing*{\subsubsection}{0pt}{2ex}{2ex}
+
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+% 9pt      
+\renewcommand{\normalsize}{%
+  \@setfontsize\normalsize{9}{10.8}%  9pt  1.2
+  \abovedisplayskip 7pt \@plus2pt \@minus4pt
+  \abovedisplayshortskip \z@ \@plus3pt
+  \belowdisplayshortskip 5pt \@plus3pt \@minus3pt
+  \belowdisplayskip \abovedisplayskip
+}
+
+%           
+\renewcommand{\small}{\@setfontsize\small{8}{9.6}}
+\renewcommand{\footnotesize}{\@setfontsize\footnotesize{7}{8.4}}
+\renewcommand{\scriptsize}{\@setfontsize\scriptsize{6}{7}}
+\renewcommand{\tiny}{\@setfontsize\tiny{5}{6}}
+\renewcommand{\large}{\@setfontsize\large{10}{12}}
+\renewcommand{\Large}{\@setfontsize\Large{12}{14.4}}
+\renewcommand{\LARGE}{\@setfontsize\LARGE{14}{17}}
+\renewcommand{\huge}{\@setfontsize\huge{17}{20}}
+\renewcommand{\Huge}{\@setfontsize\Huge{20}{24}}
+
+%      
+\normalsize
+
+%
+\titleformat{\section}[block]
+  {\fontsize{10.8}{12}\selectfont\sf\bf}  % 10.8pt  1.2
+  {\thesection}{0.5em}{}
+
+\titleformat{\subsection}[block]
+  {\fontsize{9.9}{11}\selectfont\sf\bf}   % 9.9pt  1.1
+  {\thesubsection}{0.5em}{}
+
+
+
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+\newcommand{\PreserveBackslash}[1]{\let\temp=\\#1\let\\=\temp}
+\newcolumntype{C}[1]{>{\PreserveBackslash\centering}p{#1}}
+\newcolumntype{R}[1]{>{\PreserveBackslash\raggedleft}p{#1}}
+\newcolumntype{L}[1]{>{\PreserveBackslash\raggedright}p{#1}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\def\ZUS@journal{ENGINEERING Information Technology \& Electronic Engineering}
+\def\ZUS@homepage{\href{https://www.academax.com/EITEE}{https://www.academax.com/EITEE;}    % URL of the journal
+                  \href{https://www.engineering.org.cn}{https://www.engineering.org.cn}}
+\def\ZUS@issn{\href{https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=11344065}{https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=11344065}}  % URL of Springer
+\def\ZUS@email{E-mail: eng.itee@zju.edu.cn}
+
+% copyright
+\def\ZUS@copyright{The~Authors~2026.~Published by Zhejiang University Press Co., Ltd.
+This is an open access article distributed under the terms of the CC BY-NC-ND license (https://creativecommons.org/licenses/by-nc-nd/4.0/)}
+\renewcommand{\footnoterule}{\vspace*{-8pt}\hrule width 1.65in height 0.5pt \vspace*{6pt}}
+
+% default setting on the first page
+\def\ZUS@label@doi{https://doi.org/}
+\def\ZUS@label@clc{CLC number:\ }
+\def\ZUS@label@abstract{Abstract:\ }
+\def\ZUS@label@keywords{Key words:}
+\def\ZUS@value@clc{TP391.4}
+\let \ZUS@value@doi \relax
+\let \ZUS@value@abstract \relax
+\let \ZUS@value@keywords \relax
+\newcommand\doi[1]{\def\ZUS@value@doi{#1}}
+\newcommand\clc[1]{\def\ZUS@value@clc{#1}}
+\renewcommand\abstract[1]{\def\ZUS@value@abstract{#1}}
+\newcommand\keywords[1]{\def\ZUS@value@keywords{#1}}
+
+% header
+%\def\ZUS@value@shortauthor{author et al.}
+\def\ZUS@value@year{2018}
+\def\ZUS@value@vol{19}
+\def\ZUS@value@issue{1}
+\def\ZUS@value@articlenumber{1}
+\def\ZUS@value@pagestart{1}
+\def\ZUS@value@pageend{5}
+\def\ZUS@value@dateinfo{\ }
+\def\ZUS@value@corremail{test@email.edu}
+%\newcommand\shortauthor[1]{\def\ZUS@value@shortauthor{#1}}
+\newcommand\publishyear[1]{\def\ZUS@value@year{#1}}
+\newcommand\vol[1]{\def\ZUS@value@vol{#1}}
+\newcommand\issue[1]{\def\ZUS@value@issue{#1}}
+\newcommand\articlenumber[1]{\def\ZUS@value@articlenumber{#1}}
+\newcommand\pagestart[1]{\def\ZUS@value@pagestart{#1}}
+\newcommand\pageend[1]{\def\ZUS@value@pageend{#1}}
+\newcommand\dateinfo[1]{\def\ZUS@value@dateinfo{#1}}
+
+\let \ZUS@value@corremailA \relax
+\newcommand\corremailA[1]{\def\ZUS@value@corremailA{#1}}  % if more than one email
+\let \ZUS@value@corremailB  \relax
+\newcommand\corremailB[1]{\def\ZUS@value@corremailB{#1}}  % if more than one email
+\let \ZUS@value@corremailC \relax
+\newcommand\corremailC[1]{\def\ZUS@value@corremailC{#1}}  % if more than one email
+\let \ZUS@value@corremailD  \relax
+\newcommand\corremailD[1]{\def\ZUS@value@corremailD{#1}}  % if more than one email
+\def\ZUS@value@emailmark{$ $}
+\newcommand\emailmark[1]{\def\ZUS@value@emailmark{#1}}  % if more than one email
+\let \ZUS@value@corrauth \relax
+\newcommand\authmark[1]{\def\ZUS@value@corrauth{#1}}  % if more than one email
+
+\let \ZUS@value@orcid \relax
+\newcommand\orcid[1]{\def\ZUS@value@orcid{#1}}
+
+% electronic supplementary materials
+\let \ZUS@value@esm \relax
+\newcommand\esm[1]{\def\ZUS@value@esm{#1}}
+
+% optional
+\let \ZUS@value@type \relax
+\newcommand\articleType[1]{\def\ZUS@value@type{#1}}
+
+%~~~~~~~~~~~~~~~~~~~~~~~
+% extension of conference paper
+\let \ZUS@value@conf \relax
+\newcommand\conf[1]{\def\ZUS@value@conf{#1}}
+%~~~~~~~~~~~~~~~~~~~~~~~
+
+\let \ZUS@value@inpress \relax
+\newcommand\inpress{\def\ZUS@value@inpress{1}}  % in press flag
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% format of author info
+\renewcommand\Authfont{\large}
+\renewcommand\Affilfont{\small\slshape}
+\renewcommand\Authsep{, }
+\renewcommand\Authand{, }
+\renewcommand\Authands{, }  % , before the last author
+\setlength{\affilsep}{0.9em}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% maketitle
+\renewcommand\maketitle{\par
+  \begingroup
+    \renewcommand\thefootnote{\@fnsymbol\c@footnote}%
+    \def\@makefnmark{\rlap{\@textsuperscript{\normalfont\@thefnmark}}}%
+    \long\def\@makefntext##1{\parindent 1em\noindent
+            \hb@xt@1.8em{%
+                \hss\@textsuperscript{\normalfont\@thefnmark}}##1}%
+    \if@twocolumn
+      \ifnum \col@number = \@ne
+        \@maketitle
+      \else
+        \twocolumn[\@maketitle]%
+      \fi
+    \else
+      \newpage
+      \global\@topnum\z@   % Prevent figures from going to top of page.
+      \@maketitle
+    \fi
+%    \thispagestyle{plain}
+    \@thanks
+  \endgroup
+  \setcounter{footnote}{0}%
+  \global\let\thanks\relax
+  \global\let\maketitle\relax
+  \global\let\@maketitle\relax
+  \global\let\@thanks\@empty
+  \global\let\@author\@empty
+  \global\let\@date\@empty
+  \global\let\@title\@empty
+  \global\let\title\relax
+  \global\let\author\relax
+  \global\let\date\relax
+  \global\let\and\relax
+ }
+
+
+
+\def\@maketitle{%
+  \setcounter{page}{\ZUS@value@pagestart}
+  % 1. journal logo, 7pt, 1.25 lines spacing
+  % {
+  % \vspace{-10pt}
+  % \renewcommand{\baselinestretch}{1}
+  % \renewcommand{\arraystretch}{0.75}
+  % \tabcolsep=0pt
+  % \noindent
+  % \begin{tabular}[t]{ll}
+  %     \multirow{4}{*}{\includegraphics[width=1.0cm,height=1.0cm]{eitee.eps}} & \ \ {\scriptsize \sf \slshape \ZUS@journal} \\% \ \ZUS@value@year \ \ZUS@value@vol(\ZUS@value@issue):\ZUS@value@articlenumber}   \\
+  %      & \ \ {\scriptsize \sf \ZUS@homepage } \\
+  %      & \ \ {\scriptsize \sf \ZUS@issn } \\% &  \ &  \\
+  %     & \ \ {\scriptsize \sf \ZUS@email }   \\
+  % \end{tabular}
+  % }
+
+  % 1. journal logo + Right side Images + Header Rule
+  {
+  \vspace{-10pt}
+  \renewcommand{\baselinestretch}{1}
+  \renewcommand{\arraystretch}{0.75}
+  \tabcolsep=0pt
+  \noindent
+  %
+  \begin{tabular}[b]{ll} 
+      \multirow{4}{*}{\includegraphics[height=1.0cm]{EITEE.eps}} & \ \ {\scriptsize \sf \slshape \ZUS@journal} \\
+       & \ \ {\scriptsize \sf \ZUS@homepage } \\
+       & \ \ {\scriptsize \sf \ZUS@issn } \\
+      & \ \ {\scriptsize \sf \ZUS@email }   \\
+  \end{tabular}
+  \hfill % 
+  % 
+  \begin{tabular}[b]{r}
+      \includegraphics[height=1.0cm]{EngineeringJournal.eps} 
+      \hspace{5pt} 
+      \includegraphics[height=1.0cm]{IEEE.eps} \\
+  \end{tabular}
+  
+  \vspace{2pt} 
+ {\color{headerblue}\hrule height 1pt}
+  }
+
+  % 2. title and author info
+
+  \renewcommand{\baselinestretch}{1.4} %  space between author(s) and affiliation(s)
+  \begin{center}
+  \let \footnote \thanks     % footnote: thanks
+    \vspace{16pt}
+    \leftline{\Large \sf {\textbf{\ZUS@value@type}}}
+    \begin{flushleft}
+    \begin{tabular}{@{}L{8.45cm}L{5.0cm}}
+		{\small \sf \ZUS@label@doi\ZUS@value@doi}
+	\end{tabular}
+    \end{flushleft}
+\vspace{8pt}
+
+%\title
+\begin{flushleft}
+    \vspace{2.5pt}
+    \begingroup
+        %\centering
+        \fontsize{16pt}{19.2pt}\selectfont
+        \renewcommand{\baselinestretch}{1.1}
+        \normalfont
+        \bfseries
+        \@title\par
+    \endgroup
+    \vspace{18pt}
+    \@author
+\end{flushleft}
+
+%~~~~~~~~~~~~~~~~~~~~~~~ % single email
+      %
+%    % 
+%\else
+%    % 
+%    \ifx \ZUS@value@corremailA \relax
+%        % 
+%    \else
+%        %
+%        \setcounter{footnote}{-1}\footnote{\hspace{-17pt}
+%            \text{\Letter}\ {\scriptsize \ZUS@value@corremailA}
+%        }
+%    \fi
+%\fi
+
+%~~~~~~~~~~~~~~~~~~~~~~
+\ifx \ZUS@value@corrauth \relax
+    % 
+\else
+    % 
+    \def\emailcontent{}%
+
+    %   A
+    \ifx\ZUS@value@corremailA\relax
+    \else
+        \def\emailcontent{\text{\Letter}\ \ZUS@value@corremailA}%
+    \fi
+
+    %   B
+    \ifx\ZUS@value@corremailB\relax
+    \else
+        \ifx\emailcontent\empty
+            \def\emailcontent{\text{\Letter}\ \ZUS@value@corremailB}%
+        \else
+            \expandafter\def\expandafter\emailcontent\expandafter{%
+                \emailcontent\newline\text{\Letter}\ \ZUS@value@corremailB}%
+        \fi
+    \fi
+
+    %   C
+    \ifx\ZUS@value@corremailC\relax
+    \else
+        \ifx\emailcontent\empty
+            \def\emailcontent{\text{\Letter}\ \ZUS@value@corremailC}%
+        \else
+            \expandafter\def\expandafter\emailcontent\expandafter{%
+                \emailcontent\newline\text{\Letter}\ \ZUS@value@corremailC}%
+        \fi
+    \fi
+
+    %   D
+    \ifx\ZUS@value@corremailD\relax
+    \else
+        \ifx\emailcontent\empty
+            \def\emailcontent{\text{\Letter}\ \ZUS@value@corremailD}%
+        \else
+            \expandafter\def\expandafter\emailcontent\expandafter{%
+                \emailcontent\newline\text{\Letter}\ \ZUS@value@corremailD}%
+        \fi
+    \fi
+
+    %
+    \ifx\emailcontent\empty
+        %
+    \else
+        \setcounter{footnote}{-1}\footnote{%
+            \hspace{-17pt}
+            \footnotesize
+            \emailcontent
+        }%
+    \fi
+\fi
+
+           % \textsuperscript{\ZUS@value@emailmark}E-mail:\   % default
+%            \ZUS@value@corremailA
+%         \fi
+%      %
+%         \ifx \ZUS@value@corremailB \relax
+%          \relax
+%         \else
+%             \ZUS@value@corremailB
+%         \fi
+%      %
+%         \ifx \ZUS@value@corremailC \relax
+%          \relax
+%         \else
+%             \ZUS@value@corremailC
+%         \fi
+%      %
+%         \ifx \ZUS@value@corremailD \relax
+%          \relax
+%         \else
+%             \ZUS@value@corremailD
+
+
+ %\ifx \ZUS@value@corrauth \relax
+%      %
+%    \else
+%      %
+%      \setcounter{footnote}{-1}\footnote{
+%        \hspace{-17pt}
+%        \scriptsize %
+%        %
+%        \def\emailcontent{}%
+%        %   A
+%        \ifx\ZUS@value@corremailA\relax\else
+%          \ifx\emailcontent\empty
+%            \def\emailcontent{\text{\Letter}\ \ZUS@value@corremailA}%
+%          \else
+%            \expandafter\def\expandafter\emailcontent\expandafter{\emailcontent\newline\text{\Letter}\ \ZUS@value@corremailA}%
+%          \fi
+%        \fi
+%        %   B
+%        \ifx\ZUS@value@corremailB\relax\else
+%          \ifx\emailcontent\empty
+%            \def\emailcontent{\text{\Letter}\ \ZUS@value@corremailB}%
+%          \else
+%            \expandafter\def\expandafter\emailcontent\expandafter{\emailcontent\newline\text{\Letter}\ \ZUS@value@corremailB}%
+%          \fi
+%        \fi
+%        %   C
+%        \ifx\ZUS@value@corremailC\relax\else
+%          \ifx\emailcontent\empty
+%            \def\emailcontent{\text{\Letter}\ \ZUS@value@corremailC}%
+%          \else
+%            \expandafter\def\expandafter\emailcontent\expandafter{\emailcontent\newline\text{\Letter}\ \ZUS@value@corremailC}%
+%          \fi
+%        \fi
+%        %   D
+%        \ifx\ZUS@value@corremailD\relax\else
+%          \ifx\emailcontent\empty
+%            \def\emailcontent{\text{\Letter}\ \ZUS@value@corremailD}%
+%          \else
+%            \expandafter\def\expandafter\emailcontent\expandafter{\emailcontent\newline\text{\Letter}\ \ZUS@value@corremailD}%
+%          \fi
+%        \fi
+%        %
+%        \emailcontent
+%      }%
+%    \fi
+%~~~~~~~~~~~~~~~~~~~~~~~
+  %  \ifx \ZUS@value@corrauth \relax
+%    \
+%    \else
+%     %\setcounter{footnote}{-1}\footnote{\hspace{-17pt}
+%%     \text{\Letter}\ {\scriptsize \ZUS@value@corremailA} \newline \text{\Letter}\ {\scriptsize \ZUS@value@corremailB}}
+%   %  ~~~~~~~~~~~~~~~~~~~~~
+%     \setcounter{footnote}{-1}\footnote{\hspace{-17pt}
+%     \text{\Letter}\ {\scriptsize \ZUS@value@corremailA} \newline \text{\hspace{7pt}}\ {\scriptsize \ZUS@value@corremailB}}
+%   %  ~~~~~~~~~~~~~~~~~~~~
+%    \fi
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~
+%    %% orcid declare
+ % ESM footnote
+ \ifx \ZUS@value@esm \relax
+    \
+    \else
+        \setcounter{footnote}{-1}%
+        \footnotetext[\#]{\hspace{-20pt} {\vskip -2pt} \hspace{-11pt}
+        \footnotesize {\ZUS@value@esm}}%
+    \fi
+
+ \ifx \ZUS@value@orcid \relax
+    \
+    \else
+        \setcounter{footnote}{-1}\footnote{\hspace{-15pt} {\vskip -9pt} \hspace{-11pt}
+       \footnotesize
+       %
+       {\protect\includegraphics[scale=0.40]{orcid16.eps}} \ZUS@value@orcid}
+    \fi
+
+        \setcounter{footnote}{-1}\footnote{\hspace{-20pt} {\vskip -9pt} \hspace{-11pt}
+        \footnotesize {\ZUS@label@clc}\ZUS@value@clc}
+
+%\vspace{\baselineskip}
+\setcounter{footnote}{-1}\footnote{\hspace{-20pt}{\vskip -2pt} \hspace{-11pt}
+\footnotesize {\ZUS@value@dateinfo}}
+%\vspace{\baselineskip}
+
+  % copyright
+    %\vskip 10pt
+    {\setcounter{footnote}{-1}\footnote{\hspace{-20pt}{\vskip -2pt} \hspace{-11pt}
+    \textcopyright \ {\footnotesize \ZUS@copyright}}}
+  \end{center}
+
+  % 4. Abstract
+  \vskip -60pt %before the abstract, 1.4 lines spacing
+  \renewcommand{\baselinestretch}{1.1} % abstract, 1.1 lines spacing
+  \noindent{\normalsize \bf \ZUS@label@abstract}{\normalsize \ZUS@value@abstract
+  \par}
+
+  % 5. keywords
+  \vskip 10pt
+  {
+  \renewcommand{\arraystretch}{0.9}
+  \tabcolsep=0pt
+  \noindent
+  \small {\bf \ZUS@label@keywords} \normalsize \ZUS@value@keywords
+	  }
+
+  \vskip 30pt  % space between doi and article body
+
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% header and footer: journal title and page number -  7pt
+% \pagestyle{headings}
+%
+
+\fancyhfoffset[RO]{-0.1pt}
+  \pagestyle{fancy}
+  \fancyhf{}
+  \renewcommand{\headrulewidth}{0pt}%
+  \renewcommand{\footrulewidth}{0pt}%
+
+ \fancyhead[LE]{\scriptsize\sf  \thepage \ \ | \ \scriptsize \sf {\slshape
+       ENGINEERING Inform Technol Electron Eng \ \
+      \ifx \ZUS@value@inpress \relax
+      	  \ZUS@value@year \ \ZUS@value@vol(\ZUS@value@issue):\ZUS@value@articlenumber}
+\else
+	      in press
+	  \fi
+    }      % even page (E) number on the left (L)
+%
+%
+\fancyhead[RO]{\scriptsize \sf {\slshape
+       ENGINEERING Inform Technol Electron Eng \ \
+      \ifx \ZUS@value@inpress \relax
+      	  \ZUS@value@year \ \ZUS@value@vol(\ZUS@value@issue):\ZUS@value@articlenumber} \  | \ \scriptsize  \thepage
+        \else
+	      in press
+	  \fi
+}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Set the bibliography. Attention: not to use such a Macro as natbib that defines the bibliography, otherwise the following settings are invalid
+\renewenvironment{thebibliography}[1]
+{
+\setlength\baselineskip{12pt} \setlength{\labelwidth}{0pt}
+\setlength{\labelsep}{0pt}
+{\par\vspace{10pt}\noindent\bf \refname\par}
+\begin{list}{}%
+{\leftmargin 2em
+\itemindent -2em
+\usecounter{enumiv}%
+\renewcommand\theenumiv{}}%
+\sloppy \clubpenalty4000 \widowpenalty4000
+}{\end{list} }
+
+%----------------- Upright Greek --------------------%
+\DeclareMathAlphabet{\mathitbf}{OML}{cmm}{b}{it}  % Greek boldface
+
+\DeclareMathSymbol{\alpha}{\mathalpha}{letters}{"0B}
+\DeclareMathSymbol{\beta}{\mathalpha}{letters}{"0C}
+\DeclareMathSymbol{\gamma}{\mathalpha}{letters}{"0D}
+\DeclareMathSymbol{\delta}{\mathalpha}{letters}{"0E}
+\DeclareMathSymbol{\epsilon}{\mathalpha}{letters}{"0F}
+\DeclareMathSymbol{\zeta}{\mathalpha}{letters}{"10}
+\DeclareMathSymbol{\eta}{\mathalpha}{letters}{"11}
+\DeclareMathSymbol{\theta}{\mathalpha}{letters}{"12}
+\DeclareMathSymbol{\iota}{\mathalpha}{letters}{"13}
+\DeclareMathSymbol{\kappa}{\mathalpha}{letters}{"14}
+\DeclareMathSymbol{\lambda}{\mathalpha}{letters}{"15}
+\DeclareMathSymbol{\mu}{\mathalpha}{letters}{"16}
+\DeclareMathSymbol{\nu}{\mathalpha}{letters}{"17}
+\DeclareMathSymbol{\xi}{\mathalpha}{letters}{"18}
+\DeclareMathSymbol{\pi}{\mathalpha}{letters}{"19}
+\DeclareMathSymbol{\rho}{\mathalpha}{letters}{"1A}
+\DeclareMathSymbol{\sigma}{\mathalpha}{letters}{"1B}
+\DeclareMathSymbol{\tau}{\mathalpha}{letters}{"1C}
+\DeclareMathSymbol{\upsilon}{\mathalpha}{letters}{"1D}
+\DeclareMathSymbol{\phi}{\mathalpha}{letters}{"1E}
+\DeclareMathSymbol{\chi}{\mathalpha}{letters}{"1F}
+\DeclareMathSymbol{\psi}{\mathalpha}{letters}{"20}
+\DeclareMathSymbol{\omega}{\mathalpha}{letters}{"21}
+\DeclareMathSymbol{\varepsilon}{\mathalpha}{letters}{"22}
+\DeclareMathSymbol{\vartheta}{\mathalpha}{letters}{"23}
+\DeclareMathSymbol{\varpi}{\mathalpha}{letters}{"24}
+\DeclareMathSymbol{\varrho}{\mathalpha}{letters}{"25}
+\DeclareMathSymbol{\varsigma}{\mathalpha}{letters}{"26}
+\DeclareMathSymbol{\varphi}{\mathalpha}{letters}{"27}
+
+\DeclareMathSymbol{\Gamma}{\mathalpha}{letters}{"00}
+\DeclareMathSymbol{\Delta}{\mathalpha}{letters}{"01}
+\DeclareMathSymbol{\Theta}{\mathalpha}{letters}{"02}
+\DeclareMathSymbol{\Lambda}{\mathalpha}{letters}{"03}
+\DeclareMathSymbol{\Xi}{\mathalpha}{letters}{"04}
+\DeclareMathSymbol{\Pi}{\mathalpha}{letters}{"05}
+\DeclareMathSymbol{\Sigma}{\mathalpha}{letters}{"06}
+\DeclareMathSymbol{\Upsilon}{\mathalpha}{letters}{"07}
+\DeclareMathSymbol{\Phi}{\mathalpha}{letters}{"08}
+\DeclareMathSymbol{\Psi}{\mathalpha}{letters}{"09}
+\DeclareMathSymbol{\Omega}{\mathalpha}{letters}{"0A}
+
+
+
+\endinput

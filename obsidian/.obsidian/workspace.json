@@ -1,0 +1,223 @@
+{
+  "main": {
+    "id": "0dc0c3d465dc89e7",
+    "type": "split",
+    "children": [
+      {
+        "id": "9ff44717d465157b",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "5eb94ad3a43ac02b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "蒸馏体系/国自然本子蒸馏/创新点提炼.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "创新点提炼"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "3bea7345f86df557",
+    "type": "split",
+    "children": [
+      {
+        "id": "07f048999c251f1e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "68698271c330dc96",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
+            }
+          },
+          {
+            "id": "20cd72ef3d7d7e5f",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
+            }
+          },
+          {
+            "id": "0805e54632488fda",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "书签"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 384.5
+  },
+  "right": {
+    "id": "0a4a6dca013b0d78",
+    "type": "split",
+    "children": [
+      {
+        "id": "3f3c7fe3f6d05c57",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "01f34494329fb5a3",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "反向链接"
+            }
+          },
+          {
+            "id": "0d572e398723a966",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "出链"
+            }
+          },
+          {
+            "id": "140065f6bcaceed2",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
+            }
+          },
+          {
+            "id": "4937f1f86f1548d2",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "添加笔记属性"
+            }
+          },
+          {
+            "id": "e36ea96fd89cb358",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "大纲"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false,
+      "bases:新建数据库": false
+    }
+  },
+  "active": "5eb94ad3a43ac02b",
+  "lastOpenFiles": [
+    "未命名.base",
+    "未命名 1.base",
+    "未命名.canvas",
+    "蒸馏体系/英语六级作文模板/六级作文通用模板.md",
+    "蒸馏体系/英语六级作文模板/六级作文模板简化版.md",
+    "蒸馏体系/英语六级作文模板/六级作文万能模板合集.md",
+    "蒸馏体系/英语六级作文模板/六级作文万能模板.md",
+    "蒸馏体系/README.md",
+    "蒸馏体系/已分析论文清单.md",
+    "蒸馏体系/FITEE排版规范/SKILL_FITEE.md",
+    "蒸馏体系/FITEE排版规范/FITEE排版规范全集.md",
+    "蒸馏体系/FITEE排版规范/FITEE格式审查Checklist.md",
+    "蒸馏体系/FITEE排版规范/FITEE格式审查报告_样例.md",
+    "蒸馏体系/FITEE排版规范/FITEE变量归类与速判指南.md",
+    "蒸馏体系/FITEE排版规范/作者定稿指南.pdf",
+    "蒸馏体系/FITEE排版规范/初排技巧与实例.pdf",
+    "蒸馏体系/论文规范标准/论文规范标准清单.md",
+    "蒸馏体系/论文规范标准/AI论文润色Prompt体系.md",
+    "蒸馏体系/论文写作蒸馏/张涛论文/张涛论文写作分析.md",
+    "蒸馏体系/论文写作蒸馏/张涛论文/团队写作特色综合分析.md",
+    "蒸馏体系/论文写作蒸馏/张涛论文/作战单元装备稳态可用度评估模型及其求解算法研究_李羚玮.pdf",
+    "蒸馏体系/论文写作蒸馏/各学科特色.md",
+    "蒸馏体系/论文写作蒸馏/张涛论文/并行智能优化算法研究进展_张国.pdf",
+    "蒸馏体系/国自然本子蒸馏/研究方案设计.md",
+    "蒸馏体系/论文写作蒸馏/写作风格与句式.md",
+    "蒸馏体系/论文写作蒸馏/张涛论文/面向能源互联网的能量管理系统研究_张涛.pdf",
+    "蒸馏体系/论文写作蒸馏/张涛论文/面向无人机集群路径规划的智能优化算法综述_杨旭.pdf",
+    "蒸馏体系/论文写作蒸馏/张涛论文/面向抢险救灾非战争军事行动的动员优化模型及算法_刘亚杰.pdf",
+    "蒸馏体系/论文写作蒸馏/张涛论文/面向任务的拼修策略问题及求解算法_李羚玮.pdf",
+    "蒸馏体系/论文写作蒸馏/张涛论文/面向BMS应用的锂离子电池析锂诊断方法综述_王羽.pdf",
+    "蒸馏体系/论文写作蒸馏/吴肖龙论文/吴肖龙论文写作分析.md",
+    "蒸馏体系/论文写作蒸馏/已分析论文清单.md",
+    "蒸馏体系/素材暂存区/收藏链接.md",
+    "蒸馏体系/论文写作蒸馏/李曦PEMFC论文措辞句式提取.md",
+    "蒸馏体系/论文写作蒸馏/写作架构.md",
+    "蒸馏体系/论文写作蒸馏/王京老师论文套路学习.md",
+    "蒸馏体系/国自然本子蒸馏/重点研发计划写作套路.md"
+  ]
+}
